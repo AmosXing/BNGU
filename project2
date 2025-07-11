@@ -18,9 +18,7 @@ def detect_arrow_lightbars(image_path="img2.png", save_path="result2.png"):
     # 复制原图用于绘制
     output_image = image.copy()
 
-    # 遍历每个轮廓，进行多边形拟合与筛选
     for contour in contours:
-        # 多边形逼近：获取轮廓的简化多边形近似
         epsilon = 0.03 * cv2.arcLength(contour, True)
         approx = cv2.approxPolyDP(contour, epsilon, True)
 
