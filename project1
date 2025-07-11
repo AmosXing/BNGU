@@ -1,12 +1,12 @@
 import cv2
 import numpy as np
 
-img_bgr = cv2.imread("img.png")  # 路径请根据实际放置调整
+img_bgr = cv2.imread("img.png")
 cv2.imshow("Original", img_bgr)
 
 img_hsv = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2HSV)
 
-lower_pink = np.array([160, 60, 80])   # 色相H约160~180
+lower_pink = np.array([160, 60, 80])
 upper_pink = np.array([180, 255, 255])
 
 mask = cv2.inRange(img_hsv, lower_pink, upper_pink)
